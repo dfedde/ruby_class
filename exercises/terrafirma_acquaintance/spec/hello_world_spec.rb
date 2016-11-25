@@ -2,8 +2,9 @@ require 'rspec'
 
 describe 'bin/terrafirma_acquaintance' do
   it 'will print "Hello World!!"' do
-    output = `bin/terrafirma_acquaintance`
-    expect(output.chomp).to eq 'Hello World!!'
+    $stdout = StringIO.new
+    load 'bin/terrafirma_acquaintance'
+    expect($stdout.string.chomp).to eq 'Hello World!!'
   end
 end
 
