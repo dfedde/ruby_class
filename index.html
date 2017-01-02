@@ -249,8 +249,6 @@ irb
 "Hello World"
 puts "Hello World"
           </code></pre>
-          <pre><code data-trim contenteditable>
-          </code></pre>
         </section>
 
         <section>
@@ -287,16 +285,32 @@ cd ruby_class
         </section>
 
         <section>
+          <h2>mindful methods</h2>
+          <pre><code data-trim contenteditable>
+#irb
+def hello(name)
+  puts "hello #{name}"
+end
+
+hello('world')
+hello 'world'
+hello()
+hello
+
+          </code></pre>
+        </section>
+
+        <section>
           <h2 style="position: relative; bottom: 430px;">Lab 3</h2> <a class="done-button" onclick="completeLab(3)">I'm Done</a>
           <section>
-            <h3>Maths</h3>
+            <span><h3>Breaking Bad</h3><h5>making meth-ods</h5></span>
           </section>
 
           <section>
             <h3>set up the exercise</h3>
             <pre><code data-trim contenteditable>
-            cd ruby_class/exercises/math/
-            bundle install
+cd ruby_class/exercises/breaking-bad/
+bundle install
             </code></pre>
           </section>
 
@@ -308,6 +322,7 @@ cd ruby_class
             </code></pre>
           </section>
         </section>
+
         <section>
           <h2 style="position: relative; bottom: 430px;">extra credit</h2>
           <section>
