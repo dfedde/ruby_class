@@ -53,11 +53,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Title</h1>
+          <h1><image style="border:none;background:none;box-shadow:none;" src="http://budiirawan.com/wp-content/uploads/2015/04/ruby-logo.png">Ruby</h1>
+          <h2>A Programmer's Best Friend</h2>
           <aside class="notes">
             Goals for this presentation:
             <ul>
-              <li>The goals for the class</li>
+              <li>understand ruby commands and tools</li>
+              <li>be able to write scripts in ruby</li>
+              <li>under stand the ruby structure</li>
             </ul>
             start out by asking about background in linux source control and if admin or developer
           </aside>
@@ -74,7 +77,9 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         <section>
           <h2>What will we be doing?</h2>
           <ul>
-            <li class="fragment">List of things we will be doing</li>
+            <li class="fragment">use ruby tools</li>
+            <li class="fragment">write scripts in ruby</li>
+            <li class="fragment">the obligatory hello world script</li>
           </ul>
         </section>
 
@@ -90,6 +95,13 @@ if( window.location.search.match( /print-pdf/gi ) ) {
           <p>
           <small>Cue live demo</small>
           </p>
+          <aside class="notes">
+            show the game that will be made in this class
+            <ul>
+              <li>play a round</li>
+              <li>show online ablity</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -106,13 +118,16 @@ if( window.location.search.match( /print-pdf/gi ) ) {
           <h2>lets get some prereqs out of the way</h2>
         </section>
 
+        <!-- <section> -->
+        <!--   <h2>make a <a href="http://github.com">Github</a> account</h2> -->
+        <!-- </section> -->
+
         <section>
-          <h2>make a <a href="http://github.com">Github</a> account</h2>
+          <h2><a href="https://help.github.com/articles/set-up-git/">Install Git</a></h2>
         </section>
 
         <section>
           <h2>make a <a onclick="login()">Done</a> session</h2>
-          <h3>you can use your Github credentials</h3>
         </section>
 
         <section>
@@ -159,21 +174,140 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         <section>
           <h2 style="position: relative; bottom: 430px;">Lab 1</h2> <a class="done-button" onclick="completeLab(1)">I'm Done</a>
           <section>
-            <h3>Lab Name</h3>
+            <h3>Install Ruby</h3>
+            <p>
+              <a href="#/12/1">Linux</a>&nbsp;
+              <a href="#/12/2">Mac</a>&nbsp;
+              <a href="#/12/3">Windows</a>&nbsp;
+            </p>
           </section>
 
           <section>
-            <h2>Step 1</h2>
+            <h2>Linux</h2>
             <pre><code data-trim contenteditable>
-            code example
+#bash
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+~/.rbenv/bin/rbenv init
+            </code></pre>
+            <p>restart your shell</p>
+            <pre><code data-trim contenteditable>
+#bash
+type rbenv #should be a function
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 2.4.0
+            </code></pre>
+              <a href="#/12/4">Test your install</a>
+          </section>
+
+          <section>
+            <h2>Mac</h2>
+            <pre><code data-trim contenteditable>
+#bash
+brew update
+brew install rbenv
+rbenv init
+            </code></pre>
+            <p>restart your shell</p>
+            <pre><code data-trim contenteditable>
+#bash
+type rbenv #should be a function
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 2.4.0
+            </code></pre>
+            <a href="#/12/4">Test your install</a>
+          </section>
+
+          <section>
+            <h2>Windows</h2>
+            <p>I have never tried but <a href="http://rubyinstaller.org/downloads/">ruby installer</a> seams to exist</p>
+            <p>note the versions that ruby installer provides is out of date with Mac and Linux</p>
+              <a href="#/12/4">Test your install</a>
+          </section>
+
+          <section>
+            <h2>Test out your Install</h2>
+            <pre><code data-trim contenteditable>
+#bash
+ruby --version
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>A r.e.p.l. with a cause</h2>
+          <p>read evaluate print loop</p>
+          <pre><code data-trim contenteditable>
+#bash
+irb
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code data-trim contenteditable>
+#irb
+"Hello World"
+puts "Hello World"
+          </code></pre>
+          <pre><code data-trim contenteditable>
+          </code></pre>
+        </section>
+
+        <section>
+          <h2 style="position: relative; bottom: 430px;">Lab 2</h2> <a class="done-button" onclick="completeLab(2)">I'm Done</a>
+          <section>
+            <h3>Hello world</h3>
+          </section>
+
+          <section>
+            <h3>Clone the class repo</h3>
+            <p> In a directory you wish to work in </p>
+            <pre><code data-trim contenteditable>
+git clone https://github.com/dfedde/ruby_class.git
+cd ruby_class
             </code></pre>
           </section>
 
           <section>
-            <h2>Step 2</h2>
+            <h3>set up the first exercise</h3>
+            <pre><code data-trim contenteditable>
+            cd ruby_class/exercises/terrafirma_acquaintance/
+            gem install bundler
+            bundle install
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>do first exercise</h3>
+            <p>make the specs pass</p>
+            <pre><code data-trim contenteditable>
+            bundle exec rspec spec
+            </code></pre>
           </section>
         </section>
 
+        <section>
+          <h2 style="position: relative; bottom: 430px;">Lab 3</h2> <a class="done-button" onclick="completeLab(3)">I'm Done</a>
+          <section>
+            <h3>Maths</h3>
+          </section>
+
+          <section>
+            <h3>set up the exercise</h3>
+            <pre><code data-trim contenteditable>
+            cd ruby_class/exercises/math/
+            bundle install
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>do exercise</h3>
+            <p>make the specs pass</p>
+            <pre><code data-trim contenteditable>
+            bundle exec rspec spec
+            </code></pre>
+          </section>
+        </section>
         <section>
           <h2 style="position: relative; bottom: 430px;">extra credit</h2>
           <section>
