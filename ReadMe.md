@@ -1,19 +1,14 @@
-#Ruby
+Ruby Slides
+=============
 
-## For This Class
-- you will need a github account
-- ruby 2.3.* installed ( [rbenv is a good option for installing mutible rubys](https://github.com/rbenv/rbenv#installation) [and the ruby builder](https://github.com/rbenv/ruby-build#readme))
-- git installed
-- an ssh client
-- a modern web browser(crome, firefox choromium)
+This is the presentation for a ruby class.
 
-## getting started
+A live version of the slides is [here](http://duncan.fedde.us/ruby_class)
 
-```
-git clone https://github.com/dfedde/ruby_class.git
-```
-```
-cd ruby_class
-```
-then look in exercises/terrafirma_acquaintance for the next steps
+This is using the awesome [Reveal.js](https://github.com/hakimel/reveal.js) by [Hakim]( http://hakim.se/ )
 
+To Use
+======
+
+    docker build -t yourname/ruby_class .
+    docker run -p 80:80 -d yourname/ruby_class
