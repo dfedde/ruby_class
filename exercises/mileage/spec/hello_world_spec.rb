@@ -17,11 +17,13 @@ describe 'bin/mileage-calculator' do
     is_expected.to include 'how many gallons of gas did you use? '
   end
 
-  it 'it will tell you your mileage' do
-    is_expected.to match(/your mileage was 2\.0MPG/)
+  context 'when your distance is 10 and your gallons used is 5' do
+    it 'it will tell you your mileage' do
+      is_expected.to match(/your mileage was 2\.0MPG/)
+    end
   end
 
-  describe 'with diffrent numbers' do
+  context 'when your distance is 12 and your gallons used is 3' do
     let(:distance) {12}
     let(:gallons)  {3}
     it 'it will tell you your mileage' do
@@ -31,24 +33,26 @@ describe 'bin/mileage-calculator' do
 end
 
 describe 'lib/mileage-calculator.rb' do
-  let(:mileage)  {distance/gallons.to_f}
-  subject {calculate_mileage(gallons, distance)}
+  discribe '#calculate_mileage' do
+    let(:mileage)  {distance/gallons.to_f}
+    subject {calculate_mileage(gallons, distance)}
 
-  describe 'when distance is larger then gallons used' do
-    let(:distance) {6}
-    let(:gallons)  {12}
+    context 'when your distance is 12 and your gallons used is 3' do
+      let(:distance) {6}
+      let(:gallons)  {12}
 
-    it 'will calculate mileage' do
-      is_expected.to eq mileage
+      it 'will calculate mileage' do
+        is_expected.to eq mileage
+      end
     end
-  end
 
-  describe 'when distance is smaller then gallons used' do
-    let(:distance) {10}
-    let(:gallons)  {5}
+    context 'when your distance is 10 and your gallons used is 5' do
+      let(:distance) {10}
+      let(:gallons)  {5}
 
-    it 'will calculate mileage' do
-      is_expected.to eq mileage
+      it 'will calculate mileage' do
+        is_expected.to eq mileage
+      end
     end
   end
 end
