@@ -388,19 +388,76 @@ bundle install
         </section>
 
         <section>
+            <h3>ruby's got blocks yo</h3>
+            <pre><code class="ruby" data-trim contenteditable>
+['I', 'am', 'an' 'array'].each { |word| puts word }
+
+            </code></pre>
+            <pre class="fragment"><code class="ruby" data-trim contenteditable>
+string = ''
+['I', 'am', 'an' 'array'].each { |word| string += word + ' ' }
+puts string
+
+            </code></pre>
+            <pre class="fragment"><code class="ruby" data-trim contenteditable>
+puts ['I', 'am', 'an' 'array'].inject('') do |memo, word|
+   memo += word + ' '
+  memo
+end
+            </code></pre>
+            <pre class="fragment"><code class="ruby" data-trim contenteditable>
+puts ['I', 'am', 'an' 'array'].join(' ')
+            </code class="fragment"></pre>
+            </code></pre>
+
+            <pre class="fragment"><code class="ruby" data-trim contenteditable>
+(1..10).inject([1, 1]) do |memo, _|
+   memo &le;&le; (memo[-2] + memo[-1])
+  memo
+end
+            </code></pre>
+            <pre class="fragment"><code class="ruby" data-trim contenteditable>
+[1, 2, 3, 4, 5].map { |num| num + 6 }
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>we've got class</h3>
+            <pre><code class="ruby" data-trim contenteditable>
+class Dog
+  def legs
+    4
+  end
+
+  def arms
+    0
+  end
+
+  def talk
+    puts 'bark'
+  end
+end
+
+dog = Dog.new
+
+dog.legs
+dog.arms
+dog.talk
+dog.walk
+            </code></pre>
+        </section>
+
+        <section>
           <h2 style="position: relative; bottom: 430px;">extra credit</h2>
           <section>
             <h3>extra credit things</h3>
           </section>
         </section>
 
-        <section>
-          <h2 class="fragment">Final slide joke</h2>
-          <image src="http://blogs.atlassian.com/wp-content/uploads/docker-all-the-things.png">
+        <section data-background="http://blog.smartbear.com/wp-content/uploads/2015/12/Ruby-Programming-Language-Video-Course-Free-900x506.png" data-state="img-right" >
         </section>
 
     </div>
-
     </div>
 
     <script src="lib/js/head.min.js"></script>
