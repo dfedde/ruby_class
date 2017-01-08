@@ -422,19 +422,13 @@ end
             <h3>we've got class</h3>
             <pre><code class="ruby" data-trim contenteditable>
 class Animal
+  attr_reader :legs, :arms
+
   def initialize(name, legs, arms, voice)
     @name = name
     @legs = legs
     @arms = arms
     @voice = voice
-  end
-
-  def legs
-    @legs
-  end
-
-  def arms
-    @arms
   end
 
   def talk
