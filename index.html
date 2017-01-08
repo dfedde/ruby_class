@@ -421,21 +421,28 @@ end
         <section>
             <h3>we've got class</h3>
             <pre><code class="ruby" data-trim contenteditable>
-class Dog
+class Animal
+  def initialize(name, legs, arms, voice)
+    @name = name
+    @legs = legs
+    @arms = arms
+    @voice = voice
+  end
+
   def legs
-    4
+    @legs
   end
 
   def arms
-    0
+    @arms
   end
 
   def talk
-    puts 'bark'
+    puts @voice
   end
 end
 
-dog = Dog.new
+dog = Animal.new('dog', 4, 0, 'bark')
 
 dog.legs
 dog.arms
