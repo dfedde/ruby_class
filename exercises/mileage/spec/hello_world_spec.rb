@@ -33,7 +33,7 @@ describe 'bin/mileage-calculator' do
 end
 
 describe 'lib/mileage-calculator.rb' do
-  discribe '#calculate_mileage' do
+  describe '#calculate_mileage' do
     let(:mileage)  {distance/gallons.to_f}
     subject {calculate_mileage(gallons, distance)}
 
