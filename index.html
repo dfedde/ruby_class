@@ -400,10 +400,7 @@ puts string
 
             </code></pre>
             <pre class="fragment"><code class="ruby" data-trim contenteditable>
-puts ['I', 'am', 'an', 'array'].inject('') do |memo, word|
-   memo += word + ' '
-  memo
-end
+puts ['I', 'am', 'an', 'array'].inject('') { |memo, word| memo += word + ' '; memo}
             </code></pre>
             <pre class="fragment"><code class="ruby" data-trim contenteditable>
 puts ['I', 'am', 'an', 'array'].join(' ')
@@ -412,7 +409,7 @@ puts ['I', 'am', 'an', 'array'].join(' ')
 
             <pre class="fragment"><code class="ruby" data-trim contenteditable>
 (1..10).inject([1, 1]) do |memo, _|
-   memo &le;&le; (memo[-2] + memo[-1])
+   memo &lt;&lt; (memo[-2] + memo[-1])
   memo
 end
             </code></pre>
