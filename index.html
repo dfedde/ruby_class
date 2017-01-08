@@ -390,23 +390,23 @@ bundle install
         <section>
             <h3>ruby's got blocks yo</h3>
             <pre><code class="ruby" data-trim contenteditable>
-['I', 'am', 'an' 'array'].each { |word| puts word }
+['I', 'am', 'an', 'array'].each { |word| puts word }
 
             </code></pre>
             <pre class="fragment"><code class="ruby" data-trim contenteditable>
 string = ''
-['I', 'am', 'an' 'array'].each { |word| string += word + ' ' }
+['I', 'am', 'an', 'array'].each { |word| string += word + ' ' }
 puts string
 
             </code></pre>
             <pre class="fragment"><code class="ruby" data-trim contenteditable>
-puts ['I', 'am', 'an' 'array'].inject('') do |memo, word|
+puts ['I', 'am', 'an', 'array'].inject('') do |memo, word|
    memo += word + ' '
   memo
 end
             </code></pre>
             <pre class="fragment"><code class="ruby" data-trim contenteditable>
-puts ['I', 'am', 'an' 'array'].join(' ')
+puts ['I', 'am', 'an', 'array'].join(' ')
             </code class="fragment"></pre>
             </code></pre>
 
